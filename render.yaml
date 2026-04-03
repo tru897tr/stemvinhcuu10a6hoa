@@ -1,0 +1,16 @@
+# render.yaml — Render deployment config
+services:
+  - type: web
+    name: crystal-guide
+    env: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 3000
+      - key: DISCORD_WEBHOOK_URL
+        sync: false   # set manually in Render dashboard
+      - key: SITE_NAME
+        value: Crystal Guide
